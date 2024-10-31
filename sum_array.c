@@ -6,7 +6,7 @@
 /*   By: killian <killian@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 18:19:49 by killian           #+#    #+#             */
-/*   Updated: 2024/10/30 18:20:00 by killian          ###   ########.fr       */
+/*   Updated: 2024/10/31 10:17:26 by killian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,24 @@ void	print_array(int *array, int size)
 		i++;
 	}
 }
+
+int	sum_array(int *array, int size)
+
+{
+	int	sum;
+	int	*ptr;
+
+	sum = 0;
+	ptr = array;
+	while (ptr < array + size)
+	{
+		sum += *ptr;
+		ptr++;
+	}
+      return sum; 
+      my_putnbr(sum);
+}
+
 int	main(void)
 {
 	int	array[] = {2, 4, 6, 8, 10};
@@ -49,5 +67,8 @@ int	main(void)
 	size = 5;
 	print_array(array, size);
 	my_putchar('\n');
+    int total = sum_array(array,size); 
+    my_putnbr(total); 
+    my_putchar('\n');
 	return (0);
 }
